@@ -68,21 +68,18 @@
             position: props.coords,
             map: map
           });
-          //Check for custom icon
-          if (props.iconImage) {
-            //Set icon image
-            marker.setIcon(props.iconImage);
-          }
-          //Check content
-          if (props.content) {
-            var infoWindow = new google.maps.InfoWindow({
-              content: props.content
-            });
 
-            marker.addListener("click", () => {
-              infoWindow.open(map, marker);
-            });
-          }
+          //Set icon image
+          marker.setIcon(props.iconImage);
+
+          //Set content
+          var infoWindow = new google.maps.InfoWindow({
+            content: props.content
+          });
+
+          marker.addListener("click", () => {
+            infoWindow.open(map, marker);
+          });
         }
       }
     </script>
